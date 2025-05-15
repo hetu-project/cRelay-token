@@ -1,0 +1,21 @@
+version: '3'
+services:
+  hetu_faucet:
+    image: Hetu/faucet:1
+    restart: unless-stopped
+    container_name: faucet
+    environment:
+      # - MONGO_URL=mongodb+srv://treasureNet:Lf7bZVPpArjyru9O@tnclusterm20.a9fcq.mongodb.net/treasureNet?retryWrites=true&w=majority
+      # - BLOCKCHAIN_NODE_HTTP=https://node1.testnet.treasurenet.io
+      # - PORT=3009
+      # - MQ_SECRETKEY=S44tRlCHinE4ratraSaRipr5YeWRaylWruWlvAcoqevuFRethL
+      # - MQ_HOST=http://faucet.testnet.treasurenet.io:3016
+      # - RECAPTCHA_SECRETKEY=6LdXkwQhAAAAACAuRhQF_oaRIJoJvUi--qkgjMX9
+      - MONGO_URL=http://54.169.234.21:27017
+      - BLOCKCHAIN_NODE_HTTP=http://54.169.234.21:8545
+      - PORT=3009
+      - MQ_SECRETKEY=S44tRlCHinE4ratraSaRipr5YeWRaylWruWlvAcoqevuFRethL
+      - MQ_HOST=http://54.169.234.21:3016
+      - RECAPTCHA_SECRETKEY=6LcH7dYqAAAAACjsC1UzJtPyXZ9nL2hrI-QuWfMH
+    ports:
+      - 3009:3009

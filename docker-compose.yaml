@@ -1,0 +1,8 @@
+version: '3'
+services:
+  treasureNet_faucet:
+    image: treasurenet/faucet:1
+    restart: unless-stopped
+    container_name: faucet
+    ports:
+      - 3009:3009

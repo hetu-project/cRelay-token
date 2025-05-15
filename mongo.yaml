@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - /data/mongodb:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: treasureNet
+      MONGO_INITDB_ROOT_PASSWORD: trustslink666
