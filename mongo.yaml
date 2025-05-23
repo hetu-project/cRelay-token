@@ -6,7 +6,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - /data/mongodb:/data/db
+      - ~/data/mongodb:/data/db
     environment:
-      MONGO_INITDB_ROOT_USERNAME: treasureNet
-      MONGO_INITDB_ROOT_PASSWORD: trustslink666
+      MONGO_INITDB_ROOT_USERNAME: HetuCrelay
+      MONGO_INITDB_ROOT_PASSWORD: hetcrelay666

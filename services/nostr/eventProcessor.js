@@ -50,6 +50,7 @@ class EventProcessor {
 
             // 准备分发数据
             const distributionData = {
+                account: tokenInfo.creator,
                 tokenName: tokenInfo.tokenName,
                 tokenSymbol: tokenInfo.tokenSymbol,
                 tokenDecimals: tokenInfo.tokenDecimals,
@@ -82,12 +83,14 @@ class EventProcessor {
                 tokenSymbol: this.findTagValue(tags, 'token_symbol'),
                 tokenDecimals: parseInt(this.findTagValue(tags, 'token_decimals')),
                 initialSupply: this.findTagValue(tags, 'initial_supply'),
-                dropRatio: this.parseDropRatio(this.findTagValue(tags, 'drop_ratio'))
+                dropRatio: this.parseDropRatio(this.findTagValue(tags, 'drop_ratio')),
+                creator: event.pubkey
             };
 
             // 验证必填字段
             if (!tokenInfo.sid || !tokenInfo.tokenName || !tokenInfo.tokenSymbol || 
-                !tokenInfo.tokenDecimals || !tokenInfo.initialSupply || !tokenInfo.dropRatio) {
+                !tokenInfo.tokenDecimals || !tokenInfo.initialSupply || !tokenInfo.dropRatio ||
+                !tokenInfo.creator) {
                 return null;
             }
 

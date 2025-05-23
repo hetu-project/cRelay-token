@@ -19,11 +19,6 @@ module.exports = {
         host: process.env.MQ_HOST || 'http://localhost:8080',
         secretKey: process.env.MQ_SECRET_KEY || 'your_secret_key'
     },
-    twitter: {
-        url: 'https://api.twitter.com',
-        authorization: process.env.TWITTER_AUTH,
-        officialTweetId: process.env.OFFICIAL_TWEET_ID
-    },
     reCaptcha: {
         secretKey: process.env.RECAPTCHA_SECRETKEY
     },

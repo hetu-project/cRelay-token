@@ -1,8 +1,8 @@
 version: '3'
 services:
-  treasureNet_faucet:
-    image: treasurenet/faucet:1
+  crelay_token:
+    image: crelay/token:1
     restart: unless-stopped
-    container_name: faucet
+    container_name: token
     ports:
       - 3009:3009
